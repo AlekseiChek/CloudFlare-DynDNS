@@ -1,8 +1,8 @@
 :global theinterface "ether1"
-:global hostname "subdomain.yourFQDN.net"
-:global cfApiToken "your-cloudflare-token"
-:global cfZoneId "your-cloudflare-zone-id"
-:global cfRecordId "your-FQDN-id"
+:global hostname "subdomain.example.net"
+:global cfApiToken "YOUR_TOKEN"
+:global cfZoneId "ZONE_ID"
+:global cfRecordId "RECORD_ID"
 
 # get IP with mask from wan interface
 :global ipfresh [/ip address get [/ip address find interface=$theinterface] address]
