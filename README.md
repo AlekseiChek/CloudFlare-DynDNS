@@ -66,43 +66,7 @@ This command lists all DNS records in your zone. Find your FQDN and note its `id
 
 ---
 
-## 🏗️ (Optional) Create a New FQDN Record via API
 
-If you want to create a new A-record (instead of reusing an existing one):
-
-### Linux example
-
-```bash
-curl -X POST "https://api.cloudflare.com/client/v4/zones/YOUR_ZONE_ID/dns_records" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  --data '{
-    "type": "A",
-    "name": "subdomain.yourdomain.net",
-    "content": "1.2.3.4",
-    "ttl": 120,
-    "proxied": false
-  }'
-```
-
-### MikroTik equivalent
-
-```rsc
-:global cfApiToken "YOUR_TOKEN"
-:global cfZoneId "YOUR_ZONE_ID"
-:global newFqdn "subdomain.yourdomain.net"
-:global ipaddr "1.2.3.4"
-
-/tool fetch url="https://api.cloudflare.com/client/v4/zones/$cfZoneId/dns_records" \
-  http-method=post \
-  http-data="{\"type\":\"A\",\"name\":\"$newFqdn\",\"content\":\"$ipaddr\",\"ttl\":120,\"proxied\":false}" \
-  http-header-field="Authorization: Bearer $cfApiToken, Content-Type: application/json" \
-  output=user
-```
-
-The API will return a JSON response containing the new record’s ID.
-
----
 
 ## ⚙️ What the DDNS Script Does
 
@@ -115,7 +79,7 @@ The **MikroTik DDNS script** automatically:
 
 ---
 
-## 🧰 Example Configuration Variables
+## 🧰 Example Configuration Variables (Replace with your own value)
 
 ```rsc
 :global theinterface "ether1"
@@ -185,6 +149,6 @@ Example:
 
 ---
 
-Author: **Alex**
+Author: **AlexChek**
 License: MIT
 Version: v1.0 — Cloudflare Dynamic DNS automation for MikroTik RouterOS
