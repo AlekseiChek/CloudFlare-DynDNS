@@ -1,5 +1,4 @@
-# Cloudflare Dynamic DNS on MikroTik (RouterOS) — Full Guide
-
+# Cloudflare Dynamic DNS on MikroTik (RouterOS 7.19)
 Keep your **Cloudflare A-record** automatically updated with your MikroTik router's WAN IP. This document explains all prerequisites, how to retrieve required IDs, and how to deploy the update script.
 
 ---
